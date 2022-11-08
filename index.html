@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="logado.js" defer></script>
+    <title>CLOCKEY</title>
+</head>
+<body>
+    <div class="title">
+        <img src="clockey.png" width="8%" height="8%" alt="logo">
+        <h1 class="title is-1">CLOCKEY</h1>
+        <h3>Bem-vindo, <span class="userOutput"></span></h3>
+    </div>
+    <div class="data">
+        <form onkeypress="return event.keyCode != 13">
+            <input class="input is-link" type="datetime-local" placeholder="Escolha a data e o horário">
+            <button type="button" class="button is-link" onclick="ver()">Ver</button>
+        </form>
+    </div>
+    <footer>
+        <div class="desc-footer">
+            <p>Desenvolvido por Amanda, Andre, Doris Reck, Emanuel Vidal, Paulo Vinícius e Rafael Saboia para <strong>UNIFOR</strong> - Universidade de Fortaleza 2022</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        config = {
+            enableTime: true,
+            dateFormat: "D-m-y H:i",
+        }
+        flatpickr("input[type=datetime-local]", config);
+
+        function ver(){
+            console.log('hello world');
+        }
+    </script>
+</body>
+</html>
