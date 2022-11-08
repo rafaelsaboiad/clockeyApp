@@ -6,38 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="logado.js" defer></script>
+    <link rel="stylesheet" href="login.css">
+    <script type="module" src="firebase.js" defer></script>
+    <script src="https://kit.fontawesome.com/026e4f1f21.js" crossorigin="anonymous"></script>
     <title>CLOCKEY</title>
 </head>
 <body>
-    <div class="title">
-        <img src="clockey.png" width="8%" height="8%" alt="logo">
-        <h1 class="title is-1">CLOCKEY</h1>
-        <h3>Bem-vindo, <span class="userOutput"></span></h3>
-    </div>
-    <div class="data">
-        <form onkeypress="return event.keyCode != 13">
-            <input class="input is-link" type="datetime-local" placeholder="Escolha a data e o horário">
-            <button type="button" class="button is-link" onclick="ver()">Ver</button>
-        </form>
+    <div class="card">
+        <div class="title">
+            <img src="clockey.png" width="100px" height="100px" alt="logo">
+            <h1 class="title is-3">CLOCKEY</h1>
+        </div>
+        <div class="data">
+            <form onkeypress="return event.keyCode != 13">
+                <input id="userInput" class="input is-link" type="text" placeholder="Digite seu nome">
+            </form>
+            <button id="botao" class="button is-link">Login<i class="fa-solid fa-right-to-bracket"></i></button>
+        </div>
     </div>
     <footer>
         <div class="desc-footer">
-            <p>Desenvolvido por Amanda, Andre, Doris Reck, Emanuel Vidal, Paulo Vinícius e Rafael Saboia para <strong>UNIFOR</strong> - Universidade de Fortaleza 2022</p>
+            <p> All Rights Reserved to Clockey Inc.®</p>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script>
-        config = {
-            enableTime: true,
-            dateFormat: "D-m-y H:i",
-        }
-        flatpickr("input[type=datetime-local]", config);
+    <script type="module">
+        import { writeUserData } from "./firebase.js";
 
-        function ver(){
-            console.log('hello world');
-        }
+        document.querySelector('#botao').addEventListener('click', function() {
+            window.location.href = 'calendarpage.html';
+            var userInput = document.getElementById("userInput").value;
+            writeUserData(userInput);
+            sessionStorage.setItem("userInput", userInput);
+        });
+
+        var input2 = document.getElementById("userInput");
+
+        input2.addEventListener("keypress", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.querySelector('#botao').click();
+            }
+        });
     </script>
 </body>
 </html>

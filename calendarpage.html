@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="logado.js" defer></script>
+    <script src="https://kit.fontawesome.com/026e4f1f21.js" crossorigin="anonymous"></script>
+    <title>CLOCKEY</title>
+</head>
+<body>
+    <div class="card">
+        <div class="title">
+            <h1 class="title is-4">CLOCKEY</h1>
+            <h3>Bem-vindo, <span class="userOutput"></span><i class="fa-solid fa-user"></i></h3>
+        </div>
+        <div class="data">
+            <form onkeypress="return event.keyCode != 13">
+                <input class="input is-link" type="datetime-local" placeholder="Data e Horário">
+            </form>
+            <button type="button" class="button is-link" id="botao" onclick="ver()">Ver Eventos<i class="fa-solid fa-calendar-days"></i></button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        config = {
+            enableTime: true,
+            dateFormat: "D-m-y H:i",
+        }
+        flatpickr("input[type=datetime-local]", config);
+
+        function ver(){
+            console.log('hello world');
+        }
+    </script>
+</body>
+</html>
