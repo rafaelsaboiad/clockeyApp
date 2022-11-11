@@ -24,10 +24,11 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 function writeUserData(username) {
-    const db = getDatabase();
-    set(ref(db, username), {
-        username: {userInput},
-    });
+  const db = getDatabase();
+  set(ref(db, 'users/' + username), {
+    username: username,
+    id: Math.floor(Math.random() * 10000)
+  });
 }
 
 export { writeUserData };

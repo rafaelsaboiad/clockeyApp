@@ -30,13 +30,13 @@
         </div>
     </footer>
     <script type="module">
+
         import { writeUserData } from "./firebase.js";
 
         document.querySelector('#botao').addEventListener('click', function() {
             window.location.href = 'calendarpage.html';
             var userInput = document.getElementById("userInput").value;
-            writeUserData(userInput);
-            sessionStorage.setItem("userInput", userInput);
+            sessionStorage.setItem("userInput", userInput);	
         });
 
         var input2 = document.getElementById("userInput");
