@@ -31,7 +31,7 @@
     </footer>
     <script type="module">
 
-        import { writeUserData } from "./firebase.js";
+        import { writeUserData, getDatabase, ref, get, child} from "./firebase.js";
 
         document.querySelector('#botao').addEventListener('click', function() {
             window.location.href = 'calendarpage.html';
@@ -47,6 +47,8 @@
                 document.querySelector('#botao').click();
             }
         });
+
+
     </script>
 </body>
 </html>
