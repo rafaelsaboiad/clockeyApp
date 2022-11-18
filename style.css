@@ -83,3 +83,29 @@ title{
     margin-bottom: auto;
 }
 
+.eventos-dia{
+    margin-top: 5vh;
+    background-color: white;
+    width: 81vw;
+    height: 67vh;
+    font-size: 20px;
+    text-align: center;
+}
+
+.eventos-dia h3{
+    opacity: 80%;
+}
+
+.evento {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 80vw;
+    height: auto;
+    font-size: 15px;
+    transition: ease-in-out 0.5s;
+}
+
+.evento:hover{
+    scale: 1.02;
+}
